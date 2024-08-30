@@ -130,8 +130,29 @@ Stampare in console la bici con peso minore utilizzando destructuring e template
 
 */
 
-
-
+//*creo un array oggetti con le propeirta richieste 
+const bikes = [
+    {
+        name: 'Santa Cruz Stigmata',
+        weight: `${17} Kg`
+    },
+    {
+        name: 'Cervélo R5-CX',
+        weight: `${11} Kg`
+    },
+    {
+        name: 'Specialized Crux',
+        weight: `${23} Kg`
+    },
+    {
+        name: 'Trek Boone 6',
+        weight: `${8} Kg`
+    },
+    {
+        name: 'Giant TCX Advanced',
+        weight: `${14} Kg`
+    }
+]
 
 
 
@@ -151,8 +172,7 @@ Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengo
 */
 //* Creo una funzione che generera dei nr ramdon
 const getRandomNum = (min, max) => result = Math.floor(Math.random() * (max + 1 - min)) + min;
-let points;
-let fouls;
+
 //* Creo un array di una lista con i nomi delle squadre di calcio
 
 const footballClubs = ['Bayern Munich', 'Barcelona', 'Real Madrid', 'Manchester City', 'Paris-Saint-Germain'];
