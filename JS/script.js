@@ -156,6 +156,8 @@ const footballClubs = ['Bayern Munich', 'Barcelona', 'Real Madrid', 'Manchester 
 
 //* creo un array di oggetti bassandomi sulla lista  di nomi delle squadre di calcio e aggiungo le propietà richieste
 
+const footballTables = footballClubs.map(team => {
+    return ({ teamName: team, points: 1, fouls: 2 })
+})
 
-
-
+console.log(footballTables)
