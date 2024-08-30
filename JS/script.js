@@ -104,3 +104,8 @@ const upperCaseName = students.map(student => student.name.toUpperCase());
 //stampo in console la lista dei nomi
 console.log(upperCaseName)
 
+//creo una lista di studenti filtrando i loro voti, i quali sono maggiori di 70
+const over70Grades = students.filter(student => student.grades > 70);
+
+//stampo in console la lista degli studenti con voto superiore ai 70
+console.log(over70Grades)
