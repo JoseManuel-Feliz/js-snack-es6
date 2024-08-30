@@ -1,4 +1,4 @@
-console.log('JS OK')
+console.table('JS OK')
 
 
 /*
@@ -17,7 +17,7 @@ Generiamo e stampiamo in console la lista per i segnaposto.
 
 // Lista di invitati 
 let guests = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni', 'George Clooney', 'Amal Clooney', 'Fedez', 'Amadeus', 'Fiorello']
-console.log(guests)
+console.table(guests)
 
 //Funzione per creare il segnaposto
 const createPlaceCard = (guest, i) => placeCard.push({ tableName: 'Tavolo Vip', guetsName: guest, place: i + 1 })
@@ -29,7 +29,7 @@ const placeCard = []
 guests.forEach(createPlaceCard)
 
 //stampo in console la ista dei segna posti
-console.log(placeCard)
+console.table(placeCard)
 
 
 
@@ -59,28 +59,28 @@ Id  Name                Grades
 
 const students = [
     {
-        id: 13,
+        id: 213,
         name: 'Marco della Rovere',
         grades: 78
 
     },
     {
-        id: 10,
+        id: 110,
         name: 'Paola Cortellessa',
         grades: 96
     },
     {
-        id: 50,
+        id: 250,
         name: 'Andrea Mantegna',
         grades: 48
     },
     {
-        id: 45,
+        id: 145,
         name: 'Gaia Borromini',
         grades: 74
     },
     {
-        id: 96,
+        id: 196,
         name: 'Luigi Grimaldello',
         grades: 68
     },
@@ -95,17 +95,23 @@ const students = [
         grades: 84
     }
 ];
-console.log(students)
+console.table(students)
 
 /* Creo una nuova lista basata su quella precedente, 
 prendendo soltanto i nomi degli studenti e li metto in maiuscolo */
-const upperCaseName = students.map(student => student.name.toUpperCase());
+const upperCaseName = students.map(student => student.name);
 
 //stampo in console la lista dei nomi
-console.log(upperCaseName)
+console.table(upperCaseName)
 
 //creo una lista di studenti filtrando i loro voti, i quali sono maggiori di 70
 const over70Grades = students.filter(student => student.grades > 70);
 
 //stampo in console la lista degli studenti con voto superiore ai 70
-console.log(over70Grades)
+console.table(over70Grades)
+
+//creo una lista di studenti filtrando i loro voti, i quali sono maggiori di 70 e id superiore ai 70
+const otherStudentData = over70Grades.filter(student => student.id > 120);
+
+//stampo in console la lista degli studenti con voto superiore ai 70 e id superiore ai 120
+console.table(otherStudentData)
