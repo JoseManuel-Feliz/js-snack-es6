@@ -148,23 +148,19 @@ Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0
 Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
 Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 
- */
+*/
 //* Creo una funzione che generera dei nr ramdon
 const getRandomNum = (min, max) => result = Math.floor(Math.random() * (max + 1 - min)) + min;
 
-
-
-const fouls = parseInt(getRandomNum('', 10))
-
-
 //* Creo un array di una lista con i nomi delle squadre di calcio
 
-const footballClubs = ['Bayern Munich', 'Barcelona', 'Real Madrid', 'Manchester City', 'Paris-Saint-Germain']
+const footballClubs = ['Bayern Munich', 'Barcelona', 'Real Madrid', 'Manchester City', 'Paris-Saint-Germain'];
 
 //* creo un array di oggetti bassandomi sulla lista  di nomi delle squadre di calcio e aggiungo le propietà richieste
+const footballTables = footballClubs.map(team => ({ teamName: team, points: getRandomNum('', 10), fouls: getRandomNum('', 20) }));
 
-const footballTables = footballClubs.map(team => {
-    return ({ teamName: team, points: 1, fouls: getRandomNum })
-})
 
-console.log(footballTables)
+
+
+
+console.table(footballTables)
