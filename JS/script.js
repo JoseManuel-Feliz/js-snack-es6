@@ -20,8 +20,16 @@ let guests = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Geo
 console.log(guests)
 
 //Funzione per creare il segnaposto
-const createPlaceCard = (guest, i) => guestsList.push({ tableName: 'Tavolo Vip', guetsName: guest, place: i + 1 })
+const createPlaceCard = (guest, i) => placeCard.push({ tableName: 'Tavolo Vip', guetsName: guest, place: i + 1 })
 
+
+//Creo un array vuoto per il segnaposto di ciaascun invitato
+const placeCard = []
+//per ognuno dei inivitati creo un assegnaposto
+guests.forEach(createPlaceCard)
+
+//stampo in console la ista dei segna posti
+console.log(placeCard)
 
 
 
