@@ -134,26 +134,30 @@ Stampare in console la bici con peso minore utilizzando destructuring e template
 const bikes = [
     {
         name: 'Santa Cruz Stigmata',
-        weight: `${17} Kg`
+        weight: 17
     },
     {
         name: 'Cervélo R5-CX',
-        weight: `${11} Kg`
+        weight: 11
     },
     {
         name: 'Specialized Crux',
-        weight: `${23} Kg`
+        weight: 23
     },
     {
         name: 'Trek Boone 6',
-        weight: `${8} Kg`
+        weight: 8
     },
     {
         name: 'Giant TCX Advanced',
-        weight: `${14} Kg`
+        weight: 14
     }
-]
+];
+//*
 
+const { weight } = bikes;
+const lighterBike = bikes.find(({ weight }) => (weight < 10));
+console.log(lighterBike);
 
 
 /********************************************************** */
@@ -180,11 +184,11 @@ const footballClubs = ['Bayern Munich', 'Barcelona', 'Real Madrid', 'Manchester 
 //* creo un array di oggetti bassandomi sulla lista  di nomi delle squadre di calcio e aggiungo le propietà richieste
 const footballTable = footballClubs.map(team => ({ teamName: team, points: getRandomNum('', 10), fouls: getRandomNum('', 20) }));
 //*stampo in console
-console.table(footballTable)
+console.table(footballTable);
 
 //* creo un array di oggetti bassandomi sulla lista footballClubs prendendo soltanto le propietà: teamNames e fouls
-const footballClubsFouls = footballTable.map(({ teamName, fouls }) => ({ teamName, fouls }))
+const footballClubsFouls = footballTable.map(({ teamName, fouls }) => ({ teamName, fouls }));
 //*stampo in console
-console.table(footballClubsFouls)
+console.table(footballClubsFouls);
 
 
