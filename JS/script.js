@@ -151,16 +151,20 @@ Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengo
 */
 //* Creo una funzione che generera dei nr ramdon
 const getRandomNum = (min, max) => result = Math.floor(Math.random() * (max + 1 - min)) + min;
-
+let points;
+let fouls;
 //* Creo un array di una lista con i nomi delle squadre di calcio
 
 const footballClubs = ['Bayern Munich', 'Barcelona', 'Real Madrid', 'Manchester City', 'Paris-Saint-Germain'];
 
 //* creo un array di oggetti bassandomi sulla lista  di nomi delle squadre di calcio e aggiungo le propietà richieste
-const footballTables = footballClubs.map(team => ({ teamName: team, points: getRandomNum('', 10), fouls: getRandomNum('', 20) }));
+const footballTable = footballClubs.map(team => ({ teamName: team, points: getRandomNum('', 10), fouls: getRandomNum('', 20) }));
+//*stampo in console
+console.table(footballTable)
+
+//* creo un array di oggetti bassandomi sulla lista footballClubs prendendo soltanto le propietà: teamNames e fouls
+const footballClubsFouls = footballTable.map(({ teamName, fouls }) => ({ teamName, fouls }))
+//*stampo in console
+console.table(footballClubsFouls)
 
 
-
-
-
-console.table(footballTables)
