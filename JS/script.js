@@ -33,17 +33,7 @@ console.log(placeCard)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+/* ************************************************* */
 
 
 
@@ -64,3 +54,53 @@ Id  Name                Grades
 102 Piero della Francesca   50
 120 Francesca da Polenta    84
  */
+
+//lista dati degli studenti 
+
+const students = [
+    {
+        id: 13,
+        name: 'Marco della Rovere',
+        grades: 78
+
+    },
+    {
+        id: 10,
+        name: 'Paola Cortellessa',
+        grades: 96
+    },
+    {
+        id: 50,
+        name: 'Andrea Mantegna',
+        grades: 48
+    },
+    {
+        id: 45,
+        name: 'Gaia Borromini',
+        grades: 74
+    },
+    {
+        id: 96,
+        name: 'Luigi Grimaldello',
+        grades: 68
+    },
+    {
+        id: 102,
+        name: 'Piero della Francesca',
+        grades: 50
+    },
+    {
+        id: 120,
+        name: 'Francesca da Polenta',
+        grades: 84
+    }
+];
+console.log(students)
+
+/* Creo una nuova lista basata su quella precedente, 
+prendendo soltanto i nomi degli studenti e li metto in maiuscolo */
+const upperCaseName = students.map(student => student.name.toUpperCase());
+
+//stampo in console la lista dei nomi
+console.log(upperCaseName)
+
