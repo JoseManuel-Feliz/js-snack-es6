@@ -186,9 +186,131 @@ const footballTable = footballClubs.map(team => ({ teamName: team, points: getRa
 //*stampo in console
 console.table(footballTable);
 
+/* creo le variabili da destrutturare */
+
 //* creo un array di oggetti bassandomi sulla lista footballClubs prendendo soltanto le propietà: teamNames e fouls
 const footballClubsFouls = footballTable.map(({ teamName, fouls }) => ({ teamName, fouls }));
 //*stampo in console
 console.table(footballClubsFouls);
 
+const table = document.querySelector('t-body')
+let tableResults = '';
+for (let i = 0; i < footballClubsFouls.length; i++) {
+    tableResults += `<tr><td>${footballClubsFouls.teamName}</td><td>${footballClubsFouls.fouls}</td></tr>`;
+}
+/* table.innerHTML = tableResults */
 
+
+
+
+/******************************************************************/
+
+/*
+
+ES6 Snack 5
+A partire da un array di stringhe, crea un secondo array formattando le stringhe del primo array in minuscolo e con l'iniziale maiuscola.
+
+Es: ['pippo', 'PLUTO', 'Paperino'] => ['Pippo', 'Pluto', 'Paperino']
+ */
+
+
+const words = ['massimo', 'Fabrizio', 'giovanni', 'FraNcesco', 'JOSE']
+
+function toCapitalize(word) {
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
+}
+
+const capitalizeWords = words.map((word) => {
+    toCapitalize(word)
+})
+console.log(capitalizeWords)
+
+
+/***************************************************/
+
+/* 
+Crea un array di oggetti che rappresentano degli animali.
+Ogni animale ha un nome, una famiglia e una classe.
+Es:
+[
+  { nome: 'leone', famiglia: 'felidi', classe: 'mammiferi' },
+  { nome: 'cane', famiglia: 'canidi', classe: 'mammiferi' },
+  { nome: 'gallina', famiglia: 'fasianidi', classe: 'uccelli' },
+]
+Crea un nuovo array con la lista dei mammiferi.
+ */
+
+const animals = [
+    { nome: 'coccodrillo', famiglia: 'sauropsid', classe: 'rettile' },
+    { nome: 'lemure', famiglia: 'primati', classe: 'mammiferi' },
+    { nome: 'gorilla', famiglia: 'primati', classe: 'mammiferi' },
+    { nome: 'toro', famiglia: 'bovidae', classe: 'mammiferi' },
+    { nome: 'squalo', famiglia: 'squalidi', classe: 'pesce' },
+    { nome: 'ballena', famiglia: 'cetacei', classe: 'mammiferi' },
+    { nome: 'aquila', famiglia: 'accipitridae', classe: 'uccelli' },
+    { nome: 'ape', famiglia: 'apidae', classe: 'insetti' },
+    { nome: 'scarafaggio', famiglia: 'blattoidei', classe: 'insetti' }
+
+]
+
+const mammiferi = animals.filter((animal) => animal.classe === 'mammiferi')
+
+console.log(mammiferi)
+
+/**********************************************************/
+
+
+/* 
+Crea un array di oggetti che rappresentano delle persone.
+Ogni persona ha un nome, un cognome e un'età.
+
+Crea quindi un nuovo array inserendo, per ogni persona, 
+una frase con il nome e cognome e l'indicazione se può guidare, in base all'età.
+*/
+const peoples = [
+    {
+        age: 21,
+        name: 'Marco ',
+        lastname: 'della Rovere'
+
+    },
+    {
+        age: 81,
+        name: 'Paola',
+        lastname: 'Cortellessa'
+    },
+    {
+        age: 25,
+        name: 'Andrea',
+        lastname: 'Mantegna'
+    },
+    {
+        age: 54,
+        name: 'Gaia',
+        lastname: 'Borromini'
+    },
+    {
+        age: 19,
+        name: 'Luigi',
+        lastname: 'Grimaldello'
+    },
+    {
+        age: 10,
+        name: 'Piero',
+        lastname: 'della Francesca'
+    },
+    {
+        age: 38,
+        name: 'Francesca',
+        lastname: 'da Polenta'
+    }
+]
+
+const { age, name, lastname } = peoples
+const consezoGiuda = peoples.map(people => {
+    if (age > 18 && age < 80) {
+        consezoGiuda.push(`${name} ${lastname} hai ${age} è hai il permesso di guidare`)
+    }
+})
+
+console.log(consezoGiuda)
